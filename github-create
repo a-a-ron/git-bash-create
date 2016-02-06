@@ -7,7 +7,7 @@ github-create (){
     read repo_name
   fi
 
-  curl -i -u 'a-a-ron:MY-ACCESS-TOKEN' -d '{"name":"'$repo_name'"}' https://api.github.com/user/repos
-  git remote add origin git@github.com:efatsi/$repo_name.git
+  curl -i -u 'a-a-ron:MY-ACCESS-TOKEN' -d '{"name":"'$repo_name'","auto_init":"true"}' https://api.github.com/user/repos
+  git remote add origin git@github.com:a-a-ron/$repo_name.git
   git push -u origin master
 }

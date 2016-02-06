@@ -1,3 +1,2 @@
 # Modivation for this project
-I want to create a new GitHub repo using the command line instead of having to open a web brower and create one on github.com. I also want to be better at bash.
-
+After listening to a RubyRouges episode about sharpening our tools by making our lives easier with scripts and git shortcuts, i've been inspired to perform GitHub requests through the command line using bash functions.
