@@ -15,7 +15,7 @@ github-create (){
     echo "Type your description:"
     read repo_description
 
-    curl -i -u 'a-a-ron:MY-ACCESS-TOKEN' -d '{"name":"'$repo_name'","auto_init":"true", "description":"'$repo_description'"}' https://api.github.com/user/repos
+    curl -i -u 'a-a-ron:MY-ACCESS-TOKEN' -d '{"name":"'$repo_name'","auto_init":"true", "description":"'"$repo_description"'"}' https://api.github.com/user/repos
     git remote add origin git@github.com:a-a-ron/$repo_name.git
     git push -u origin master
   else
