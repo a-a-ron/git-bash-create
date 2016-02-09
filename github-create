@@ -15,15 +15,27 @@ github-create (){
     echo "Type your description:"
     read repo_description
 
+    echo -n "Creating Github repository '$repo_name' ..."
     curl -i -u 'a-a-ron:MY-ACCESS-TOKEN' -d '{"name":"'$repo_name'","auto_init":"true", "description":"'"$repo_description"'"}' https://api.github.com/user/repos
+    echo -n "done."
+
+    echo -n "Pushing local code to remote ..."
     git remote add origin git@github.com:a-a-ron/$repo_name.git
     git push -u origin master
+    echo "done."
+
   else
     echo -n "Repo will be created with no description"
     echo
 
+    echo -n "Creating Github repository '$repo_name' ..."
     curl -i -u 'a-a-ron:MY-ACCESS-TOKEN' -d '{"name":"'$repo_name'","auto_init":"true"}' https://api.github.com/user/repos
+    echo "done."
+
+    echo -n "Pushing local code to remote ..."
     git remote add origin git@github.com:a-a-ron/$repo_name.git
     git push -u origin master
+    echo "done."
+
   fi
 }
