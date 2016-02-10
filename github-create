@@ -16,7 +16,7 @@ github-create (){
     read repo_description
 
     echo -n "Creating Github repository '$repo_name' ..."
-    curl -i -u 'a-a-ron:MY-ACCESS-TOKEN' -d '{"name":"'$repo_name'","auto_init":"true", "description":"'"$repo_description"'"}' https://api.github.com/user/repos
+    curl -i -u 'USERNAME:MY-PERSONAL-ACCESS-TOKEN' -d '{"name":"'$repo_name'","auto_init":"true", "description":"'"$repo_description"'"}' https://api.github.com/user/repos
     echo -n "done."
 
     echo -n "Pushing local code to remote ..."
@@ -29,11 +29,11 @@ github-create (){
     echo
 
     echo -n "Creating Github repository '$repo_name' ..."
-    curl -i -u 'a-a-ron:MY-ACCESS-TOKEN' -d '{"name":"'$repo_name'","auto_init":"true"}' https://api.github.com/user/repos
+    curl -i -u 'USERNAME:MY-PERSONAL-ACCESS-TOKEN' -d '{"name":"'$repo_name'","auto_init":"true"}' https://api.github.com/user/repos
     echo "done."
 
     echo -n "Pushing local code to remote ..."
-    git remote add origin git@github.com:a-a-ron/$repo_name.git
+    git remote add origin git@github.com:USERNAME/$repo_name.git
     git push -u origin master
     echo "done."
 
